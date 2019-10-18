@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <!-- metas -->
+        <meta charset="utf-8">
+        <meta name="author" content="themepaa">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Freelance Web Design and Development">
+        <!-- title -->
+        <title>Samuel P Randall - Freelance Web</title>
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="template/favicon.ico">
+        <!-- plugin CSS -->
+        <link href="template/static/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="template/static/plugin/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="template/static/plugin/et-line/style.css" rel="stylesheet">
+        <link href="template/static/plugin/themify-icons/themify-icons.css" rel="stylesheet">
+        <link href="template/static/plugin/owl-carousel/css/owl.carousel.min.css" rel="stylesheet">
+        <link href="template/static/plugin/magnific/magnific-popup.css" rel="stylesheet">
+        <!-- theme css -->
+        <link href="template/static/style/master.css" rel="stylesheet">
+        <script type="text/text/javascript">
+            function submitToAPI(e) {
+           e.preventDefault();
+           var URL = "https://eibajejss4.execute-api.us-east-1.amazonaws.com/default/node-email-service";
+
+                var Namere = /[A-Za-z]{1}[A-Za-z]/;
+                if (!Namere.test($("#name-input").val())) {
+                             alert ("Name can not be less than 2 char");
+                    return;
+                }
+                if ($("#email-input").val()=="") {
+                    alert ("Please enter your email address");
+                    return;
+                }
+
+                var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+                if (!reeamil.test($("#email-input").val())) {
+                    alert ("Please enter a valid email address");
+                    return;
+                }
+
+           var name = $("#name-input").val();
+           var email = $("#email-input").val();
+           var desc = $("#description-input").val();
+           var data = {
+              name : name,
+              email : email,
+              desc : desc
+            };
+
+           $.ajax({
+             type: "POST",
+             url : "https://eibajejss4.execute-api.us-east-1.amazonaws.com/default/node-email-service",
+             dataType: "json",
+             crossDomain: "true",
+             contentType: "application/json; charset=utf-8",
+             data: JSON.stringify(data),
+
+
+             success: function () {
+               // clear form and show a success message
+               alert("Successful");
+               document.getElementById("contact-form").reset();
+           location.reload();
+             },
+             error: function () {
+               // show an error message
+               alert("UnSuccessful");
+             }});
+         }
+        </script>
+    </head>
+
+    <!-- Body Start -->
+    <body data-spy="scroll" data-target="#navbar-collapse-toggle" data-offset="70">
+
+        <!-- page loading -->
+        <div id="loading">
+            <div class="load-circle"><span class="one"></span></div>
+        </div>
+        <!-- end page loading -->
+
+        <header class="header-nav header-one-page">
+            <!-- Header Middle -->
+            <div class="navbar navbar-default navbar-expand-lg main-navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="logo-text" href="#">
+                            SPR
+                        </a>
+                    </div>
+
+                    <div class="navbar-collapse justify-content-end collapse" id="navbar-collapse-toggle">
+                        <ul class="nav navbar-nav">
+                            <li><a class="nav-link" href="#home">Home</a></li>
+                            <li><a class="nav-link" href="#about">About</a></li>
+                            <li><a class="nav-link" href="#services">Services</a></li>
+                            <li><a class="nav-link" href="#contactus">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="extra-menu d-flex align-items-center">
+                        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar-collapse-toggle" aria-expanded="false">
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- End Header Middle -->
+        </header>
+
+        <!-- Main -->
+        <main>
+            <!-- Home Banner -->
+              <section id="home" class="home-banner-02 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(template/static/img/IMG_3876.JPG);">
+              <!-- below is for local use only -->
+              <!-- <section id="home" class="home-banner-02 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(template/static/img/IMG_3876.jpg);"> -->
+                <div class="sec-round">
+                    <div class="container full-height">
+                      <div class="round-item round-item-1"></div>
+                      <div class="round-item round-item-2"></div>
+                      <div class="round-item round-item-3"></div>
+                      <div class="round-item round-item-4"></div>
+                      <div class="round-item round-item-5"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row full-screen align-items-center p-100px-tb">
+                        <div class="col-lg-9">
+                            <div class="ht-box m-50px-t">
+                                <h1 class="white-color m-10px-b">Samuel P Randall</h1>
+                                <h2 class="white-color m-0px">I Am a Passionate <span id="type-it"></span></h2>
+                                <div class="p-30px-t">
+                                    <a class="m-btn m-btn-radius m-btn-t-white" href="#">Download CV</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Home Banner -->
+
+            <!-- about us -->
+            <section id="about" class="section white-bg">
+                <div class="container">
+                    <div class="row sm-m-25px-b m-35px-b">
+                        <div class="col-md-12">
+                            <div class="section-title">
+                                <h3 class="dark-color text-uppercase">ABOUT ME</h3>
+                                <p class="text-uppercase small">information about me</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4 m-15px-tb">
+                            <img src="template/static/img/IMG_3777.jpg" title="" alt="">
+                        </div>
+                        <div class="col-lg-8 m-15px-tb">
+                            <h4 class="dark-color font-w-600 m-10px-b">I'm Samuel P Randall</h4>
+                            <h6 class="dark-color m-20px-b">A Lead <span class="theme-color">Web</span> developer based in <span class="theme-color">San Antonio, Texas</span></h6>
+                            <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites and web services. My passion is to design digital user experiences through the bold interface and meaningful interactions.</p>
+
+                            <div class="row p-10px-t">
+                                <div class="col-md-6">
+                                    <div class="media border-bottom m-10px-b p-10px-b">
+                                        <label class="dark-color font-w-600 m-0px p-10px-r">Birthday:</label>
+                                        <p class="m-0px">January 23rd 1997</p>
+                                    </div>
+                                    <div class="media border-bottom m-10px-b p-10px-b">
+                                        <label class="dark-color font-w-600 m-0px p-10px-r">Age:</label>
+                                        <p class="m-0px">22 Yr</p>
+                                    </div>
+                                    <div class="media border-bottom m-10px-b p-10px-b">
+                                        <label class="dark-color font-w-600 m-0px p-10px-r">Residence:</label>
+                                        <p class="m-0px">San Antonio, Texas</p>
+                                    </div>
+                                    <div class="media border-bottom m-10px-b p-10px-b">
+                                        <label class="dark-color font-w-600 m-0px p-10px-r">Education:</label>
+                                        <p class="m-0px">The University of Texas at Austin</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="media border-bottom m-10px-b p-10px-b">
+                                        <label class="dark-color font-w-600 m-0px p-10px-r">E-mail:</label>
+                                        <p class="m-0px">samuelrandall@mail.com</p>
+                                    </div>
+                                    <div class="media border-bottom m-10px-b p-10px-b">
+                                        <label class="dark-color font-w-600 m-0px p-10px-r">Phone:</label>
+                                        <p class="m-0px">(210) 859-2309</p>
+                                    </div>
+                                    <div class="media border-bottom m-10px-b p-10px-b">
+                                        <label class="dark-color font-w-600 m-0px p-10px-r">GitHub:</label>
+                                        <p class="m-0px">github.com/SamuelRandall​</p>
+                                    </div>
+                                    <div class="media border-bottom m-10px-b p-10px-b">
+                                        <label class="dark-color font-w-600 m-0px p-10px-r">Freelance:</label>
+                                        <p class="m-0px">Available</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="nav d-none si-dark si-radisu social-icon d-md-flex m-20px-t">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/samuel-randall-50b645181/"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end about us -->
+
+            <!-- resume -->
+            <section id="services" class="section gray-bg">
+                <div class="container">
+                    <div class="row sm-m-25px-b m-35px-b justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            <div class="section-title text-center">
+                                <h3 class="dark-color text-uppercase">My Services</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- feaure box -->
+                        <div class="col-sm-6 col-lg-4 m-15px-tb">
+                            <div class="feature-box-3">
+                                <div class="icon">
+                                    <i class="icon-desktop"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Unique design</h5>
+                                    <p>I design adaptable solutions that are appropriate and modern.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / -->
+                        <!-- feaure box -->
+                        <div class="col-sm-6 col-lg-4 m-15px-tb">
+                            <div class="feature-box-3">
+                                <div class="icon">
+                                    <i class="icon-pricetags"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Different Layouts</h5>
+                                    <p>Layouts that are crafted from those with professional experience and knows what attracts attention.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / -->
+                        <!-- feaure box -->
+                        <div class="col-sm-6 col-lg-4 m-15px-tb">
+                            <div class="feature-box-3">
+                                <div class="icon">
+                                    <i class="icon-chat"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Make it Simple</h5>
+                                    <p>Simplify your website with the proper use of elements and taglines.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / -->
+                        <!-- feaure box -->
+                        <div class="col-sm-6 col-lg-4 m-15px-tb">
+                            <div class="feature-box-3">
+                                <div class="icon">
+                                    <i class="icon-mobile"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Responsiveness</h5>
+                                    <p>All solutions are mobile and tablet friendly.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / -->
+                        <!-- feaure box -->
+                        <div class="col-sm-6 col-lg-4 m-15px-tb">
+                            <div class="feature-box-3">
+                                <div class="icon">
+                                    <i class="icon-target"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Testing for Perfection</h5>
+                                    <p>Ensure zero downtime through the use of a robust testing process.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / -->
+                        <!-- feaure box -->
+                        <div class="col-sm-6 col-lg-4 m-15px-tb">
+                            <div class="feature-box-3">
+                                <div class="icon">
+                                    <i class="icon-tools-2"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Advanced Options</h5>
+                                    <p>Customizable websites that include any necessary functionality.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / -->
+
+                    </div>
+
+                </div>
+            </section>
+            <!-- End resume -->
+
+            <!-- Skill -->
+            <section class="section white-bg">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 md-p-15px-r p-40px-r">
+                            <div class="section-title">
+                                <h3 class="dark-color text-uppercase">Professional skills</h3>
+                            </div>
+                            <p class="m-25px-t">I create websites that obey proper development standards and design procedures.</p>
+                            <!-- skill -->
+                            <div class="skill-lt p-25px-t">
+                                <h6 class="dark-color">HTML5</h6>
+                                <div class="skill-bar">
+                                  <div class="skill-bar-in theme-bg" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                                    <span>92%</span>
+                                  </div>
+                                </div>
+                            </div>
+                            <!-- end skill -->
+                            <!-- skill -->
+                            <div class="skill-lt">
+                                <h6 class="dark-color">Python</h6>
+                                <div class="skill-bar">
+                                  <div class="skill-bar-in theme-bg" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+                                    <span>75%</span>
+                                  </div>
+                                </div>
+                            </div>
+                            <!-- end skill -->
+                            <!-- skill -->
+                            <div class="skill-lt">
+                                <h6 class="dark-color">AWS</h6>
+                                <div class="skill-bar">
+                                  <div class="skill-bar-in theme-bg" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100">
+                                    <span>86%</span>
+                                  </div>
+                                </div>
+                            </div><!-- /skill -->
+                            <!-- end skill -->
+                            <!-- skill -->
+                            <div class="skill-lt">
+                                <h6 class="dark-color">UI/UX</h6>
+                                <div class="skill-bar">
+                                  <div class="skill-bar-in theme-bg" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                                    <span>88%</span>
+                                  </div>
+                                </div>
+                            </div>
+                            <!-- end skill -->
+                        </div>
+                        <div class="col-lg-6 md-m-40px-t">
+                            <img src="template/static/img/UT_Tower.jpg" title="" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Skill -->
+
+            <!-- cta -->
+            <section class="section p-40px-tb dark-bg">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-8 text-center text-md-left m-15px-tb">
+                            <h4 class="m-0px white-color font-w-700">
+                            I Am Available For Freelance.
+                            </h4>
+                        </div>
+                        <div class="col-md-4 text-center text-md-right m-15px-tb">
+                            <a class="m-btn m-btn-t-white" href="#contactus">Get in touch!</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- / -->
+            <section id="contactus" class="section gray-bg">
+                <div class="container">
+                    <div class="row sm-m-25px-b m-35px-b justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            <div class="section-title text-center">
+                                <h3 class="dark-color text-uppercase">Get in touch</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- form -->
+                    <div class="contact-form border white-bg">
+                        <div class="sm-title p-25px-b">
+                            <h5 class="dark-color">Drop us a line</h5>
+                            <p class="m-0px">We are here to answer any question you may have</p>
+                            <i class="far fa-paper-plane"></i>
+                        </div>
+                        <form id="contact-form" method="post">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input id="name-input" name="name" type="text" placeholder="Name" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input id="email-input" type="email" placeholder="Email" name="email" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <textarea id="description-input" placeholder="Your Comment" name="message" class="form-control" required=""></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 sm-m-15px-b">
+                                    <small>We respect your privacy and do not tolerate spam and will never sell, rent, lease or give away your information</small>
+                                </div>
+                                <div class="col-md-4 text-left text-md-right">
+                                    <div class="send">
+                                        <button class="m-btn m-btn-theme" type="submit" name="send">Get in touch</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                    <!-- end form -->
+                </div>
+            </section>
+        </main>
+        <!-- main end -->
+        <!-- Footer-->
+        <footer class="footer footer-dark">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="footer-about text-center">
+                        <div class="fot-logo">
+                            SPR
+                        </div>
+                        <div class="nav si-dark si-round social-icon si-40 justify-content-center">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/samuel-randall-50b645181/"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer top -->
+        </footer>
+        <!-- footer End -->
+
+
+        <!-- jquery -->
+        <script src="template/static/js/jquery-3.2.1.min.js"></script>
+        <script src="template/static/js/jquery-migrate-3.0.0.min.js"></script>
+        <!-- end jquery -->
+        <!-- appear -->
+        <script src="template/static/plugin/appear/jquery.appear.js"></script>
+        <!-- end appear -->
+        <!--bootstrap-->
+        <script src="template/static/plugin/bootstrap/js/popper.min.js"></script>
+        <script src="template/static/plugin/bootstrap/js/bootstrap.js"></script>
+        <!--end bootstrap-->
+        <!-- End -->
+
+        <!-- custom js -->
+        <script src="template/static/js/custom.js"></script>
+        <!-- end -->
+
+        <!-- end body -->
+    </body>
+</html>
