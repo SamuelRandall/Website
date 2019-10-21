@@ -4,4 +4,4 @@ phases:
       runtime-versions:
         java: openjdk8
       commands:
-      - aws s3 sync dist s3://samuelprandall.com --delete
+      - aws s3 sync s3://samuelprandall.com --delete
