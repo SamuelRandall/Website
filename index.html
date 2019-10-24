@@ -1,13 +1,24 @@
 
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
     <head>
-        <!-- metas -->
         <meta charset="utf-8">
-        <meta name="author" content="themepaa">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Freelance Web Design and Development">
+        
+        <!-- Bing validation -->
+        <meta name="msvalidate.01" content="AE7E0A452BFEED356E5C83C99C5D7141" />
+
+        <!-- Facebook opengraph -->
+        <meta property="og:url"                content="https://www.samuelprandall.com?fb=True" />
+        <meta property="og:type"               content="website" />
+        <meta property="og:title"              content="Samuel P Randall - Freelance Web" />
+        <meta property="og:description"        content="Freelance Web Design and Development" />
+        <!-- <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" /> -->
+
+        <!-- Add Twitter metadata here -->
+
         <!-- title -->
         <title>Samuel P Randall - Freelance Web</title>
         <!-- Favicon -->
@@ -21,67 +32,6 @@
         <link href="template/static/plugin/magnific/magnific-popup.css" rel="stylesheet">
         <!-- theme css -->
         <link href="template/static/style/master.css" rel="stylesheet">
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150942360-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-150942360-1');
-        </script>
-
-        <script type="text/text/javascript">
-            function submitToAPI(e) {
-           e.preventDefault();
-           var URL = "https://eibajejss4.execute-api.us-east-1.amazonaws.com/default/node-email-service";
-
-                var Namere = /[A-Za-z]{1}[A-Za-z]/;
-                if (!Namere.test($("#name-input").val())) {
-                             alert ("Name can not be less than 2 char");
-                    return;
-                }
-                if ($("#email-input").val()=="") {
-                    alert ("Please enter your email address");
-                    return;
-                }
-
-                var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
-                if (!reeamil.test($("#email-input").val())) {
-                    alert ("Please enter a valid email address");
-                    return;
-                }
-
-           var name = $("#name-input").val();
-           var email = $("#email-input").val();
-           var desc = $("#description-input").val();
-           var data = {
-              name : name,
-              email : email,
-              desc : desc
-            };
-
-           $.ajax({
-             type: "POST",
-             url : "https://eibajejss4.execute-api.us-east-1.amazonaws.com/default/node-email-service",
-             dataType: "json",
-             crossDomain: "true",
-             contentType: "application/json; charset=utf-8",
-             data: JSON.stringify(data),
-
-
-             success: function () {
-               // clear form and show a success message
-               alert("Successful");
-               document.getElementById("contact-form").reset();
-           location.reload();
-             },
-             error: function () {
-               // show an error message
-               alert("UnSuccessful");
-             }});
-         }
-        </script>
     </head>
 
     <!-- Body Start -->
@@ -467,7 +417,15 @@
             <!-- footer top -->
         </footer>
         <!-- footer End -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150942360-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
+          gtag('config', 'UA-150942360-1');
+        </script>
 
         <!-- jquery -->
         <script src="template/static/js/jquery-3.2.1.min.js"></script>
@@ -480,7 +438,6 @@
         <script src="template/static/plugin/bootstrap/js/popper.min.js"></script>
         <script src="template/static/plugin/bootstrap/js/bootstrap.js"></script>
         <!--end bootstrap-->
-        <!-- End -->
 
         <!-- custom js -->
         <script src="template/static/js/custom.js"></script>
