@@ -430,25 +430,23 @@
 		var email = $("#email-input").val();
 		var desc = $("#description-input").val();
 		var data = {
-			'name': name,
-			'email': email,
-			'desc': desc
+			name: name,
+			email: email,
+			desc: desc
 		};
 
 		$.ajax({
 		 type: "POST",
 		 url : "https://eibajejss4.execute-api.us-east-1.amazonaws.com/prod/node-email-service",
 		 dataType: "json",
-		 crossDomain: "true",
 		 contentType: "application/json; charset=utf-8",
 		 data: JSON.stringify(data),
-
 
 		 success: function () {
 			 // clear form and show a success message
 			 alert("Thank you, I will get back to you as soon as possible.");
 			 document.getElementById("contact-form").reset();
-		location.reload();
+			 location.reload();
 		 },
 		 error: function () {
 			 // show an error message
