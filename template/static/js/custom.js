@@ -408,7 +408,7 @@
 	// Email service code
 	function submitToAPI(e) {
 		e.preventDefault();
-		var URL = "https://eibajejss4.execute-api.us-east-1.amazonaws.com/default/node-email-service";
+		var URL = "https://eibajejss4.execute-api.us-east-1.amazonaws.com/prod/node-email-service";
 
 				var Name = /[A-Za-z]{1}[A-Za-z]/;
 				if (!Name.test($("#name-input").val())) {
@@ -437,7 +437,7 @@
 
 		$.ajax({
 		 type: "POST",
-		 url : "/rest/contact/",
+		 url : "/node-email-service",
 		 dataType: "json",
 		 crossDomain: "true",
 		 contentType: "application/json; charset=utf-8",
