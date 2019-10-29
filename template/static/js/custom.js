@@ -437,7 +437,7 @@
 
 		$.ajax({
 		 type: "POST",
-		 url : "/",
+		 url : "/rest/contact/",
 		 dataType: "json",
 		 crossDomain: "true",
 		 contentType: "application/json; charset=utf-8",
