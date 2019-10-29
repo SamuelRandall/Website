@@ -405,12 +405,13 @@
 	$(window).on("resize", function(){
 		NAY.HeaderHeight();
 	});
+	// Email service code
 	function submitToAPI(e) {
 		e.preventDefault();
 		var URL = "https://eibajejss4.execute-api.us-east-1.amazonaws.com/default/node-email-service";
 
-				var Namere = /[A-Za-z]{1}[A-Za-z]/;
-				if (!Namere.test($("#name-input").val())) {
+				var Name = /[A-Za-z]{1}[A-Za-z]/;
+				if (!Name.test($("#name-input").val())) {
 										 alert ("Name can not be less than 2 char");
 						return;
 				}
@@ -419,8 +420,8 @@
 						return;
 				}
 
-				var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
-				if (!reeamil.test($("#email-input").val())) {
+				var Email = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+				if (!Email.test($("#email-input").val())) {
 						alert ("Please enter a valid email address");
 						return;
 				}
@@ -436,7 +437,7 @@
 
 		$.ajax({
 		 type: "POST",
-		 url : "https://eibajejss4.execute-api.us-east-1.amazonaws.com/default/node-email-service",
+		 url : "/rest/contact/",
 		 dataType: "json",
 		 crossDomain: "true",
 		 contentType: "application/json; charset=utf-8",
