@@ -336,11 +336,12 @@
     	if ($("#type-it").exists()){
             loadScript(plugin_track + 'typeit-master/typeit.min.js', function() {
                 new TypeIt('#type-it', {
-		            speed: 200,
+		            speed: 300,
 		            loop:true,
 		            strings: [
 		              'Designer',
-		              'Developer'
+		              'Developer',
+						'Student'
 		            ],
 		            breakLines: false
 		        });
